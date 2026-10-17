@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    long long arr[n];
+    cout << "Enter elements: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    long long sum = 0;
+    long long sq_sum = 0;
+
+    for (int i = 0; i < n; i++) {
+        sum = sum + arr[i];
+        sq_sum = sq_sum + (arr[i] * arr[i]);
+    }
+
+    long long ans = ((sum * sum) - sq_sum) / 2;
+
+    cout << "Sum of products of all unique pairs: " << ans << endl;
+    return 0;
+}
